@@ -1,0 +1,338 @@
+/*  //Reset//Base Styles// Custom Properties//  */
+/* Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+}
+
+/* Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /*  Add accessible line-height */
+    line-height: 1.5;
+    /*  Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/*  Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*  Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*  Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*Custom Properties*/
+:root {
+    --font-xs: 0.694rem;
+
+    --font-sm: 0.833rem;
+
+    --font-base: 1rem;
+
+    --font-lg: 1.2rem;
+
+    --font-xl: 1.44rem;
+
+    --font-2xl: 1.728rem;
+
+    --font-3xl: 2.074rem;
+
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/Fonts/SpaceGrotesk-Light.woff2') format('woff2'),
+        url('/Fonts/SpaceGrotesk-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: 'Space Grotesk';
+}
+
+.dashboard {
+    display: grid;
+    height: 98vh;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main-content";
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main-content {
+    grid-area: main-content;
+}
+
+.header {
+    display: grid;
+    height: 200px;
+    grid-template-rows: 75px 125px;
+}
+
+.header {
+    font-size: var(--font-lg);
+}
+
+.upper-header {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 10% 50% 10% 10% 20%;
+}
+
+.upper-header img {
+    height: 3rem;
+}
+
+input {
+    align-self: center;
+    height: 2rem;
+}
+
+.lower-header {
+    display: grid;
+    grid-template-columns: 10% 30% 60%;
+}
+
+.lower-header img {
+    height: 5rem;
+}
+
+.lower-header {
+    justify-content: center;
+}
+
+.greet {
+    font-size: var(--font-base);
+}
+
+.username-and-tag {
+    font-size: var(--font-xl);
+}
+
+.buttons {
+    justify-self: end;
+}
+
+button {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.sidebar {
+    display: grid;
+    grid-template-rows: 1fr 4fr 2fr 3fr;
+    gap: 30px;
+}
+
+.sidebar {
+    background-color: #32aadaff;
+    padding-left: 15px;
+}
+
+.sidebar-title {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.sidebar-title {
+    font-size: var(--font-2xl);
+    font-weight: bold;
+}
+
+.sidebar-title img {
+    height: 3rem;
+}
+
+.sidebar-links {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.sidebar-links img {
+    height: 2rem;
+}
+
+.sidebar-options {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.sidebar-options img {
+    height: 2rem;
+}
+
+.sidebar-links,
+.sidebar-options {
+    font-size: var(--font-xl);
+    font-weight: bold;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "projects announcements"
+        "projects trending";
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.main-content {
+    background-color: #E5F8FF;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5% 95%;
+    gap: 10px;
+}
+
+.card-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, minmax(150px, 3fr));
+    gap: 30px;
+}
+
+.card {
+    border-radius: 20px;
+    background-color: rgba(174, 211, 164, 0.624);
+    border-left: 5px solid #A7D160;
+}
+
+.card p {
+    text-align: center;
+    font-size: var(--font-base);
+}
+
+.announcements {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+.title {
+    font-weight: bold;
+    font-size: var(--font-lg);
+}
+
+.announcements {
+    justify-content: center;
+}
+
+.announcements-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.announcements-container {
+    background-color: #A7D160;
+    border-radius: 10px;
+}
+
+.announcement {
+    border-bottom: 5px solid gray;
+    font-weight: bold;
+    ;
+}
+
+
+.trending {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.trending>div {
+    justify-self: center;
+    font-size: var(--font-base);
+    font-weight: bold;
+    align-items: center;
+}
+
+.trend-container {
+    display: grid;
+}
+
+.trend {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.trend-title {
+    font-size: var(--font-xl);
+    font-weight: bold;
+}
+
+.trending img {
+    height: 3rem;
+}
